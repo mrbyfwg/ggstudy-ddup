@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.DdupPptmanageEntity" table="ddup_pptmanage" schema="ddupmis">
+        <id name="ddupPptNo" column="ddup_pptNo"/>
+        <property name="ddupName" column="ddup_name"/>
+        <property name="ddupPptPageNum" column="ddup_pptPageNum"/>
+        <property name="ddupPptDownloadNum" column="ddup_pptDownloadNum"/>
+        <set name="ddupPptstudentcontentsByDdupPptNo" inverse="true">
+            <key>
+                <column name="ddup_pptNo"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bean.DdupPptstudentcontentEntity"/>
+        </set>
+        <set name="ddupPptteachercontenthardsByDdupPptNo" inverse="true">
+            <key>
+                <column name="ddup_pptNo"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontenthardEntity"/>
+        </set>
+        <set name="ddupPptteachercontentimportantsByDdupPptNo" inverse="true">
+            <key>
+                <column name="ddup_pptNo"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontentimportantEntity"/>
+        </set>
+        <set name="ddupPptteachercontentimportanthardsByDdupPptNo" inverse="true">
+            <key>
+                <column name="ddup_pptNo"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontentimportanthardEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

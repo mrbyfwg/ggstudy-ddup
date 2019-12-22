@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="struts" extends="json-default,struts-default" namespace="/">
+<!--        teacher实体类接口-->
+        <action name="findAllteacher" class="com.action.teacherAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdteacher" class="com.action.teacherAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateteacher" class="com.action.teacherAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addteacher" class="com.action.teacherAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdteacher" class="com.action.teacherAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        student实体类接口-->
+        <action name="findAllstudent" class="com.action.studentAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdstudent" class="com.action.studentAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatestudent" class="com.action.studentAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addstudent" class="com.action.studentAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdstudent" class="com.action.studentAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--homework实体类接口-->
+        <action name="findAllhomework" class="com.action.HomeworkAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdhomework" class="com.action.HomeworkAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatehomework" class="com.action.HomeworkAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addhomework" class="com.action.HomeworkAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdclass" class="com.action.HomeworkAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        Class实体类接口-->
+        <action name="findAllClass" class="com.action.classAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdClass" class="com.action.classAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateClass" class="com.action.classAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addClass" class="com.action.classAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdClass" class="com.action.classAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        Course实体类接口-->
+        <action name="findAllCourse" class="com.action.courseAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdCourse" class="com.action.courseAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateCourse" class="com.action.courseAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addCourse" class="com.action.courseAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdCourse" class="com.action.courseAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        major实体类的接口-->
+        <action name="findAllMajor" class="com.action.majorAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdMajor" class="com.action.majorAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateMajor" class="com.action.majorAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addMajor" class="com.action.majorAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdMajor" class="com.action.majorAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

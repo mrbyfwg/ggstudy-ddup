@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/javaee?characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.connection.autocommit">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>com/bean/DdupTeacherEntity.hbm.xml</value>
+                <value>com/bean/DdupClassEntity.hbm.xml</value>
+                <value>com/bean/DdupCourseEntity.hbm.xml</value>
+                <value>com/bean/DdupHomeworkEntity.hbm.xml</value>
+                <value>com/bean/DdupMajorEntity.hbm.xml</value>
+                <value>com/bean/DdupPptcontentEntity.hbm.xml</value>
+                <value>com/bean/DdupPptmanageEntity.hbm.xml</value>
+                <value>com/bean/DdupPptstudentcontentEntity.hbm.xml</value>
+                <value>com/bean/DdupPptteachercontenthardEntity.hbm.xml</value>
+                <value>com/bean/DdupPptteachercontentimportantEntity.hbm.xml</value>
+                <value>com/bean/DdupPptteachercontentimportanthardEntity.hbm.xml</value>
+                <value>com/bean/DdupStudentEntity.hbm.xml</value>
+                <value>com/bean/DdupStudentpasswordmanageEntity.hbm.xml</value>
+                <value>com/bean/DdupTeachEntity.hbm.xml</value>
+                <value>com/bean/DdupTeachbuildingEntity.hbm.xml</value>
+                <value>com/bean/DdupTeacherpasswordmanageEntity.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="BaseHibernateDao" class="com.dao.BaseHibernateDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="teacherDao" class="com.dao.teacherDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="teacherService" class="com.service.teacherServiceImpl">
+        <property name="teacherDao" ref="teacherDao"/>
+    </bean>
+    <bean id="studentDao" class="com.dao.studentDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="studentService" class="com.service.studentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+    <bean id="HomeworkDao" class="com.dao.HomeworkDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="homeworkService" class="com.service.HomeworkServiceImpl">
+        <property name="homeworkDao" ref="HomeworkDao"/>
+    </bean>
+    <bean id="clsssDao" class="com.dao.classDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="classService" class="com.service.classServiceImpl">
+        <property name="classDao" ref="clsssDao"/>
+    </bean>
+    <bean id="courseDao" class="com.dao.courseDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="courseService" class="com.service.courseServiceImpl">
+        <property name="courseDao" ref="courseDao"/>
+    </bean>
+    <bean id="majorDao" class="com.dao.majorDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="majorService" class="com.service.majorServiceImpl">
+        <property name="majorDao" ref="majorDao"/>
+    </bean>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.DdupTeachEntity" table="ddup_teach" schema="ddupmis">
+        <composite-id mapped="true" class="com.bean.DdupTeachEntityPK">
+            <key-property name="ddupTno" column="ddup_Tno"/>
+            <key-property name="ddupCno" column="ddup_Cno"/>
+            <key-property name="ddupClassno" column="ddup_Classno"/>
+        </composite-id>
+        <property name="ddupTeachRoomId" column="ddup_teachRoomID"/>
+        <property name="ddupTeachBuildingId" column="ddup_teachBuildingID"/>
+        <many-to-one name="ddupTeacherByDdupTno" class="com.bean.DdupTeacherEntity">
+            <column name="ddup_Tno"/>
+        </many-to-one>
+        <many-to-one name="ddupCourseByDdupCno" class="com.bean.DdupCourseEntity">
+            <column name="ddup_Cno"/>
+        </many-to-one>
+        <many-to-one name="ddupClassByDdupClassno" class="com.bean.DdupClassEntity">
+            <column name="ddup_Classno"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

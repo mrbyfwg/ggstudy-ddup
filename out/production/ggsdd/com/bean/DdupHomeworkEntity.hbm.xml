@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.DdupHomeworkEntity" table="ddup_homework" schema="ddupmis">
+        <id name="ddupHomeworkNum" column="ddup_homeworkNum"/>
+        <property name="ddupCno" column="ddup_Cno"/>
+        <property name="ddupHomeworkName" column="ddup_homeworkName"/>
+        <property name="ddupStartTime" column="ddup_startTime"/>
+        <property name="ddupEndTime" column="ddup_endTime"/>
+        <property name="ddupSubmitNum" column="ddup_submitNum"/>
+        <many-to-one name="ddupCourseByDdupCno" class="com.bean.DdupCourseEntity" lazy="false" insert="false" update="false">
+            <column name="ddup_Cno"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

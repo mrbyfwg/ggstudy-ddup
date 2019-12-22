@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.DdupPptstudentcontentEntity" table="ddup_pptstudentcontent" schema="ddupmis">
+        <composite-id mapped="true" class="com.bean.DdupPptstudentcontentEntityPK">
+            <key-property name="ddupSno" column="ddup_sno"/>
+            <key-property name="ddupPptNo" column="ddup_pptNo"/>
+            <key-property name="ddupPptPageNum" column="ddup_pptPageNum"/>
+        </composite-id>
+        <many-to-one name="ddupStudentByDdupSno" class="com.bean.DdupStudentEntity">
+            <column name="ddup_sno"/>
+        </many-to-one>
+        <many-to-one name="ddupPptmanageByDdupPptNo" class="com.bean.DdupPptmanageEntity">
+            <column name="ddup_pptNo"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

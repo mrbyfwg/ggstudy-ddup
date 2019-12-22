@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.DdupStudentEntity" table="ddup_student" schema="ddupmis">
+        <id name="ddupSno" column="ddup_Sno"/>
+        <property name="ddupName" column="ddup_name"/>
+        <property name="ddupClass" column="ddup_class"/>
+        <property name="ddupSex" column="ddup_sex"/>
+        <property name="ddupAge" column="ddup_age"/>
+        <property name="ddupOriginPlace" column="ddup_originPlace"/>
+        <many-to-one name="ddupClassByDdupClass" class="com.bean.DdupClassEntity" insert="false" update="false" lazy="false">
+            <column name="ddup_class"/>
+        </many-to-one>
+        <set name="ddupPptstudentcontentsByDdupSno" inverse="true" lazy="false">
+            <key>
+                <column name="ddup_sno"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.bean.DdupPptstudentcontentEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>
