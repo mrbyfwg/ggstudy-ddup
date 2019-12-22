@@ -61,4 +61,14 @@ public class teachDaoImpl extends BaseHibernateDao implements teachDao{
             throw re;
         }
     }
+    @Override
+    @Transactional
+    public void deleteByHql(String hql) {
+        try {
+            getSession().createQuery(hql).list();
+        } catch (RuntimeException re) {
+            System.out.println("deleteByHql error");
+            throw re;
+        }
+    }
 }

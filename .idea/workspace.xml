@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56be5810-4bb8-4ac6-80c4-f7765513038d" name="默认更改列表" comment="" />
+    <list default="true" id="33a54729-3003-49c0-b076-9db70451afc6" name="默认更改列表" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1VL0IcNGsHiaIC4nXbE9alyCj3t" />
+  <component name="ProjectId" id="1VKzoS3oSlim9HS47eljNYPmUMa" />
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="settings.xslt" />
@@ -30,11 +30,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="56be5810-4bb8-4ac6-80c4-f7765513038d" name="默认更改列表" comment="" />
-      <created>1577016988093</created>
+      <changelist id="33a54729-3003-49c0-b076-9db70451afc6" name="默认更改列表" comment="" />
+      <created>1577016749768</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1577016988093</updated>
+      <updated>1577016749768</updated>
     </task>
     <servers />
   </component>

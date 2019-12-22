@@ -1,37 +1,33 @@
 package com.action;
 
-import com.bean.DdupStudentEntity;
-import com.service.studentService;
+import com.bean.DdupTeachbuildingEntity;
+import com.service.teachBuildingService;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class studentAction extends baseActionConfig{
-    private DdupStudentEntity student;
-    private studentService studentService;
+public class teachBuildingAction extends baseAction{
+    private DdupTeachbuildingEntity student;
+    private teachBuildingService teachBuildingService;
     private String result;
     private String id;
-    private String name;
-    private String sex;
-    private int age;
-    private String ddclass;
-    private String originPlace;
+    private String teachBuildingName;
 
-    public DdupStudentEntity getStudent() {
+    public DdupTeachbuildingEntity getTeachBuildingEntity() {
         return student;
     }
 
-    public void setStudent(DdupStudentEntity student) {
+    public void setTeachBuildingEntity(DdupTeachbuildingEntity student) {
         this.student = student;
     }
 
-    public com.service.studentService getStudentService() {
-        return studentService;
+    public com.service.teachBuildingService getTeachBuildingService() {
+        return teachBuildingService;
     }
 
-    public void setStudentService(com.service.studentService studentService) {
-        this.studentService = studentService;
+    public void setTeachBuildingService(com.service.teachBuildingService teachBuildingService) {
+        this.teachBuildingService = teachBuildingService;
     }
 
     public String getResult() {
@@ -50,53 +46,21 @@ public class studentAction extends baseActionConfig{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTeachBuildingName() {
+        return teachBuildingName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getDdclass() {
-        return ddclass;
-    }
-
-    public void setDdclass(String ddclass) {
-        this.ddclass = ddclass;
-    }
-
-    public String getOriginPlace() {
-        return originPlace;
-    }
-
-    public void setOriginPlace(String originPlace) {
-        this.originPlace = originPlace;
+    public void setTeachBuildingName(String teachBuildingName) {
+        this.teachBuildingName = teachBuildingName;
     }
 
     public String findAllUser() {
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try {
-            List list = studentService.findAll();
+            List list = teachBuildingService.findAll();
             if (list.size() != 0) {
-                map.put("studentlist", list);
+                map.put("teachBuildinglist", list);
                 status = "1";
             } else {
                 status = "0";
@@ -115,10 +79,10 @@ public class studentAction extends baseActionConfig{
         String status = null;
 
         try{
-            List list=studentService.findById(id);
+            List list=teachBuildingService.findById(id);
             if(list.size()!=0){
-                student=(DdupStudentEntity) list.get(0);
-                map.put("student",student);
+                student=(DdupTeachbuildingEntity) list.get(0);
+                map.put("teachBuilding",student);
                 status="1";
             }
             else{
@@ -138,15 +102,10 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.add(student)){
+            student=new DdupTeachbuildingEntity();
+            student.setDdupTeachBuildingName(teachBuildingName);
+            student.setDdupTeachBuildingId(id);
+            if(teachBuildingService.add(student)){
                 status="1";
             }else{
                 status="0";
@@ -164,15 +123,10 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.updateInfo(student)){
+            student=new DdupTeachbuildingEntity();
+            student.setDdupTeachBuildingName(teachBuildingName);
+            student.setDdupTeachBuildingId(id);
+            if(teachBuildingService.updateInfo(student)){
                 status="1";
             }else{
                 status="0";
@@ -190,7 +144,7 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            if(studentService.deleteById(id)){
+            if(teachBuildingService.deleteById(id)){
                 status="1";
             }else{
                 status="0";

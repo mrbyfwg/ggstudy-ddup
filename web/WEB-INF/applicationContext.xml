@@ -12,9 +12,9 @@
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/javaee?characterEncoding=utf-8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ddupmis?characterEncoding=utf-8"/>
         <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="password" value="ywp19990816"/>
     </bean>
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -79,5 +79,27 @@
     <bean id="majorDao" class="com.dao.majorDaoImpl" parent="BaseHibernateDao"></bean>
     <bean id="majorService" class="com.service.majorServiceImpl">
         <property name="majorDao" ref="majorDao"/>
+    </bean>
+
+    <bean id="teachBuildingDao" class="com.dao.teachBuildingDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="teachBuildingService" class="com.service.teachBuildingServiceImpl">
+        <property name="teachBuildingDao" ref="teachBuildingDao"/>
+    </bean>
+    <bean id="teachDao" class="com.dao.teachDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="teachService" class="com.service.teachServiceImpl">
+        <property name="teachDao" ref="teachDao"/>
+    </bean>
+    <bean id="teacherPasswordManageDao" class="com.dao.teacherPasswordManageDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="teacherPasswordManageService" class="com.service.teacherPasswordManageServiceImpl">
+        <property name="teacherPasswordManageDao" ref="teacherPasswordManageDao"/>
+    </bean>
+    <bean id="studentPasswordManageDao" class="com.dao.studentPasswordManageDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="studentPasswordManageService" class="com.service.studentPasswordManageServiceImpl">
+        <property name="studentPasswordManageDao" ref="studentPasswordManageDao"/>
+    </bean>
+
+    <bean id="pptManageDao" class="com.dao.pptManageDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptManageService" class="com.service.pptManageServiceImpl">
+        <property name="pptManageDao" ref="pptManageDao"/>
     </bean>
 </beans>

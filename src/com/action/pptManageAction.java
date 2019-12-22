@@ -1,45 +1,35 @@
 package com.action;
 
-import com.bean.DdupStudentEntity;
-import com.service.studentService;
+import com.bean.DdupPptmanageEntity;
+import com.service.pptManageService;
+import net.sf.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class studentAction extends baseActionConfig{
-    private DdupStudentEntity student;
-    private studentService studentService;
-    private String result;
+public class pptManageAction extends baseActionConfig7 {
+    private DdupPptmanageEntity pptManage;
+    private pptManageService pptManageService;
     private String id;
     private String name;
-    private String sex;
-    private int age;
-    private String ddclass;
-    private String originPlace;
+    private int pageNum;
+    private int DownloadNum;
 
-    public DdupStudentEntity getStudent() {
-        return student;
+    public DdupPptmanageEntity getPptmanageEntity() {
+        return pptManage;
     }
 
-    public void setStudent(DdupStudentEntity student) {
-        this.student = student;
+    public void setPptmanageEntity(DdupPptmanageEntity pptmanageEntity) {
+        this.pptManage = pptmanageEntity;
     }
 
-    public com.service.studentService getStudentService() {
-        return studentService;
+    public com.service.pptManageService getPptManageService() {
+        return pptManageService;
     }
 
-    public void setStudentService(com.service.studentService studentService) {
-        this.studentService = studentService;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
+    public void setPptManageService(com.service.pptManageService pptManageService) {
+        this.pptManageService = pptManageService;
     }
 
     public String getId() {
@@ -58,45 +48,29 @@ public class studentAction extends baseActionConfig{
         this.name = name;
     }
 
-    public String getSex() {
-        return sex;
+    public int getPageNum() {
+        return pageNum;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
     }
 
-    public int getAge() {
-        return age;
+    public int getDownloadNum() {
+        return DownloadNum;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getDdclass() {
-        return ddclass;
-    }
-
-    public void setDdclass(String ddclass) {
-        this.ddclass = ddclass;
-    }
-
-    public String getOriginPlace() {
-        return originPlace;
-    }
-
-    public void setOriginPlace(String originPlace) {
-        this.originPlace = originPlace;
+    public void setDownloadNum(int downloadNum) {
+        DownloadNum = downloadNum;
     }
 
     public String findAllUser() {
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try {
-            List list = studentService.findAll();
+            List list = pptManageService.findAll();
             if (list.size() != 0) {
-                map.put("studentlist", list);
+                map.put("pptManageList", list);
                 status = "1";
             } else {
                 status = "0";
@@ -115,10 +89,10 @@ public class studentAction extends baseActionConfig{
         String status = null;
 
         try{
-            List list=studentService.findById(id);
+            List list=pptManageService.findById(id);
             if(list.size()!=0){
-                student=(DdupStudentEntity) list.get(0);
-                map.put("student",student);
+                pptManage=(DdupPptmanageEntity) list.get(0);
+                map.put("pptManage",pptManage);
                 status="1";
             }
             else{
@@ -138,15 +112,12 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.add(student)){
+            pptManage=new DdupPptmanageEntity();
+            pptManage.setDdupPptNo(id);
+            pptManage.setDdupName(name);
+            pptManage.setDdupPptPageNum(pageNum);
+            pptManage.setDdupPptDownloadNum(DownloadNum);
+            if(pptManageService.add(pptManage)){
                 status="1";
             }else{
                 status="0";
@@ -164,15 +135,12 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.updateInfo(student)){
+            pptManage=new DdupPptmanageEntity();
+            pptManage.setDdupPptNo(id);
+            pptManage.setDdupName(name);
+            pptManage.setDdupPptPageNum(pageNum);
+            pptManage.setDdupPptDownloadNum(DownloadNum);
+            if(pptManageService.updateInfo(pptManage)){
                 status="1";
             }else{
                 status="0";
@@ -189,8 +157,10 @@ public class studentAction extends baseActionConfig{
     public String deleteById(){
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
+
         try{
-            if(studentService.deleteById(id)){
+
+            if(pptManageService.deleteById(id)){
                 status="1";
             }else{
                 status="0";
@@ -205,4 +175,5 @@ public class studentAction extends baseActionConfig{
         }
 
     }
+
 }

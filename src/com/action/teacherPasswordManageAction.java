@@ -1,37 +1,33 @@
 package com.action;
 
-import com.bean.DdupStudentEntity;
-import com.service.studentService;
+import com.bean.DdupTeacherpasswordmanageEntity;
+import com.service.teacherPasswordManageService;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class studentAction extends baseActionConfig{
-    private DdupStudentEntity student;
-    private studentService studentService;
+public class teacherPasswordManageAction extends baseAction{
+    private DdupTeacherpasswordmanageEntity teacher;
+    private teacherPasswordManageService teacherPasswordManageService;
     private String result;
     private String id;
-    private String name;
-    private String sex;
-    private int age;
-    private String ddclass;
-    private String originPlace;
+    private String password;
 
-    public DdupStudentEntity getStudent() {
-        return student;
+    public DdupTeacherpasswordmanageEntity getTeacherpasswordmanageEntity() {
+        return teacher;
     }
 
-    public void setStudent(DdupStudentEntity student) {
-        this.student = student;
+    public void setTeacherpasswordmanageEntity(DdupTeacherpasswordmanageEntity teacher) {
+        this.teacher = teacher;
     }
 
-    public com.service.studentService getStudentService() {
-        return studentService;
+    public com.service.teacherPasswordManageService getTeacherPasswordManageService() {
+        return teacherPasswordManageService;
     }
 
-    public void setStudentService(com.service.studentService studentService) {
-        this.studentService = studentService;
+    public void setTeacherPasswordManageService(com.service.teacherPasswordManageService teacherPasswordManageService) {
+        this.teacherPasswordManageService = teacherPasswordManageService;
     }
 
     public String getResult() {
@@ -50,53 +46,21 @@ public class studentAction extends baseActionConfig{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPassword() {
+        return password;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getDdclass() {
-        return ddclass;
-    }
-
-    public void setDdclass(String ddclass) {
-        this.ddclass = ddclass;
-    }
-
-    public String getOriginPlace() {
-        return originPlace;
-    }
-
-    public void setOriginPlace(String originPlace) {
-        this.originPlace = originPlace;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String findAllUser() {
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try {
-            List list = studentService.findAll();
+            List list = teacherPasswordManageService.findAll();
             if (list.size() != 0) {
-                map.put("studentlist", list);
+                map.put("teacherPasswordManagelist", list);
                 status = "1";
             } else {
                 status = "0";
@@ -115,10 +79,10 @@ public class studentAction extends baseActionConfig{
         String status = null;
 
         try{
-            List list=studentService.findById(id);
+            List list=teacherPasswordManageService.findById(id);
             if(list.size()!=0){
-                student=(DdupStudentEntity) list.get(0);
-                map.put("student",student);
+                teacher=(DdupTeacherpasswordmanageEntity) list.get(0);
+                map.put("teacherPasswordManage",teacher);
                 status="1";
             }
             else{
@@ -138,15 +102,10 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.add(student)){
+            teacher=new DdupTeacherpasswordmanageEntity();
+            teacher.setDdupPassword(password);
+            teacher.setDdupTno(id);
+            if(teacherPasswordManageService.add(teacher)){
                 status="1";
             }else{
                 status="0";
@@ -164,15 +123,10 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.updateInfo(student)){
+            teacher=new DdupTeacherpasswordmanageEntity();
+            teacher.setDdupPassword(password);
+            teacher.setDdupTno(id);
+            if(teacherPasswordManageService.updateInfo(teacher)){
                 status="1";
             }else{
                 status="0";
@@ -190,7 +144,7 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            if(studentService.deleteById(id)){
+            if(teacherPasswordManageService.deleteById(id)){
                 status="1";
             }else{
                 status="0";

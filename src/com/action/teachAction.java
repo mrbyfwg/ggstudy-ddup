@@ -1,37 +1,60 @@
 package com.action;
-
-import com.bean.DdupStudentEntity;
-import com.service.studentService;
+import com.bean.DdupTeachEntity;
+import com.service.teachService;
+import net.sf.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class studentAction extends baseActionConfig{
-    private DdupStudentEntity student;
-    private studentService studentService;
+public class teachAction extends baseActionConfigA{
+    private DdupTeachEntity teach;
+    private teachService teachService;
     private String result;
-    private String id;
-    private String name;
-    private String sex;
-    private int age;
-    private String ddclass;
-    private String originPlace;
+    private String cno;
+    private String tno;
+    private String classno;
+    private String teachRoomID;
+    private String teachBuildingID;
 
-    public DdupStudentEntity getStudent() {
-        return student;
+    public String getTeachRoomID() {
+        return teachRoomID;
     }
 
-    public void setStudent(DdupStudentEntity student) {
-        this.student = student;
+    public void setTeachRoomID(String teachRoomID) {
+        this.teachRoomID = teachRoomID;
     }
 
-    public com.service.studentService getStudentService() {
-        return studentService;
+    public String getTeachBuildingID() {
+        return teachBuildingID;
     }
 
-    public void setStudentService(com.service.studentService studentService) {
-        this.studentService = studentService;
+    public void setTeachBuildingID(String teachBuildingID) {
+        this.teachBuildingID = teachBuildingID;
+    }
+
+    public String getCno() {
+        return cno;
+    }
+
+    public void setCno(String cno) {
+        this.cno = cno;
+    }
+
+    public String getClassno() {
+        return classno;
+    }
+
+    public void setClassno(String classno) {
+        this.classno = classno;
+    }
+
+    public String getTno() {
+        return tno;
+    }
+
+    public void setTno(String tno) {
+        this.tno = tno;
     }
 
     public String getResult() {
@@ -42,61 +65,29 @@ public class studentAction extends baseActionConfig{
         this.result = result;
     }
 
-    public String getId() {
-        return id;
+    public DdupTeachEntity getTeach() {
+        return teach;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTeach(DdupTeachEntity teach) {
+        this.teach = teach;
     }
 
-    public String getName() {
-        return name;
+    public com.service.teachService getTeachService() {
+        return teachService;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getDdclass() {
-        return ddclass;
-    }
-
-    public void setDdclass(String ddclass) {
-        this.ddclass = ddclass;
-    }
-
-    public String getOriginPlace() {
-        return originPlace;
-    }
-
-    public void setOriginPlace(String originPlace) {
-        this.originPlace = originPlace;
+    public void setTeachService(com.service.teachService teachService) {
+        this.teachService = teachService;
     }
 
     public String findAllUser() {
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try {
-            List list = studentService.findAll();
+            List list = teachService.findAll();
             if (list.size() != 0) {
-                map.put("studentlist", list);
+                map.put("teachlist", list);
                 status = "1";
             } else {
                 status = "0";
@@ -115,10 +106,10 @@ public class studentAction extends baseActionConfig{
         String status = null;
 
         try{
-            List list=studentService.findById(id);
+            List list=teachService.findById(tno, cno, classno);
             if(list.size()!=0){
-                student=(DdupStudentEntity) list.get(0);
-                map.put("student",student);
+                teach=(DdupTeachEntity) list.get(0);
+                map.put("teach",teach);
                 status="1";
             }
             else{
@@ -138,15 +129,13 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.add(student)){
+            teach=new DdupTeachEntity();
+            teach.setDdupTeachBuildingId(teachBuildingID);
+            teach.setDdupTeachRoomId(teachRoomID);
+            teach.setDdupTno(tno);
+            teach.setDdupClassno(classno);
+            teach.setDdupCno(cno);
+            if(teachService.add(teach)){
                 status="1";
             }else{
                 status="0";
@@ -164,15 +153,13 @@ public class studentAction extends baseActionConfig{
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
         try{
-            student=new DdupStudentEntity();
-            student.setDdupAge(age);
-            System.out.println(age);
-            student.setDdupName(name);
-            student.setDdupClass(ddclass);
-            student.setDdupSex(sex);
-            student.setDdupOriginPlace(originPlace);
-            student.setDdupSno(id);
-            if(studentService.updateInfo(student)){
+            teach=new DdupTeachEntity();
+            teach.setDdupTeachRoomId(teachRoomID);
+            teach.setDdupTeachBuildingId(teachBuildingID);
+            teach.setDdupTno(tno);
+            teach.setDdupClassno(classno);
+            teach.setDdupCno(cno);
+            if(teachService.updateInfo(teach)){
                 status="1";
             }else{
                 status="0";
@@ -189,8 +176,10 @@ public class studentAction extends baseActionConfig{
     public String deleteById(){
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
+
         try{
-            if(studentService.deleteById(id)){
+
+            if(teachService.deleteByHql(tno,cno,classno)){
                 status="1";
             }else{
                 status="0";
@@ -205,4 +194,5 @@ public class studentAction extends baseActionConfig{
         }
 
     }
+
 }

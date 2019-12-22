@@ -135,6 +135,32 @@
                 <param name="root">result</param>
             </result>
         </action>
+<!--        TeachBuilding实体类的接口-->
+        <action name="findAllTeachBuilding" class="com.action.teachBuildingAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeachBuilding" class="com.action.teachBuildingAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeachBuilding" class="com.action.teachBuildingAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeachBuilding" class="com.action.teachBuildingAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeachBuilding" class="com.action.teachBuildingAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
 <!--        major实体类的接口-->
         <action name="findAllMajor" class="com.action.majorAction" method="findAllUser">
             <result type="json">
@@ -157,6 +183,84 @@
             </result>
         </action>
         <action name="deleteByIdMajor" class="com.action.majorAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        TeacherPasswordManage实体类的接口-->
+        <action name="findAllTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        StudentPasswordManage实体类的接口-->
+        <action name="findAllStudentPasswordManage" class="com.action.studentPasswordManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdStudentPasswordManage" class="com.action.studentPasswordManageAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateStudentPasswordManage" class="com.action.studentPasswordManageAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addStudentPasswordManage" class="com.action.studentPasswordManageAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdStudentPasswordManage" class="com.action.studentPasswordManageAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+<!--        Teach实体类的接口-->
+        <action name="findAllTeach" class="com.action.teachAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeach" class="com.action.teachAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeach" class="com.action.teachAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeach" class="com.action.teachAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeach" class="com.action.teachAction" method="deleteById">
             <result type="json">
                 <param name="root">result</param>
             </result>
