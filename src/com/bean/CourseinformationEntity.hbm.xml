@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bean.CourseinformationEntity" table="courseinformation" schema="ddupmis">
+        <id name="ddupCourseName" column="ddup_courseName"/>
+        <property name="ddupCno" column="ddup_Cno"/>
+        <property name="ddupTeacherName" column="ddup_teacherName"/>
+        <property name="ddupTno" column="ddup_Tno"/>
+        <property name="ddupClassno" column="ddup_Classno"/>
+        <property name="ddupPeriod" column="ddup_period"/>
+        <property name="ddupLearnTime" column="ddup_learn_time"/>
+        <property name="ddupTestMethod" column="ddup_test_method"/>
+        <property name="ddupCredit" column="ddup_credit"/>
+        <property name="ddupTeachRoomId" column="ddup_teachRoomID"/>
+        <property name="ddupTeachBuildingName" column="ddup_teachBuildingName"/>
+    </class>
+</hibernate-mapping>
