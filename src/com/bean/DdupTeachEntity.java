@@ -67,18 +67,32 @@ public class DdupTeachEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         DdupTeachEntity that = (DdupTeachEntity) o;
 
-        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) return false;
-        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) return false;
-        if (ddupClassno != null ? !ddupClassno.equals(that.ddupClassno) : that.ddupClassno != null) return false;
+        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) {
+            return false;
+        }
+        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null){
+            return false;
+        }
+        if (ddupClassno != null ? !ddupClassno.equals(that.ddupClassno) : that.ddupClassno != null) {
+            return false;
+        }
         if (ddupTeachRoomId != null ? !ddupTeachRoomId.equals(that.ddupTeachRoomId) : that.ddupTeachRoomId != null)
+        {
             return false;
+        }
         if (ddupTeachBuildingId != null ? !ddupTeachBuildingId.equals(that.ddupTeachBuildingId) : that.ddupTeachBuildingId != null)
+        {
             return false;
+        }
 
         return true;
     }

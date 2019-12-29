@@ -12,7 +12,7 @@
         <property name="ddupEndTime" column="ddup_endTime"/>
         <property name="ddupSubmitNum" column="ddup_submitNum"/>
         <many-to-one name="ddupCourseByDdupCno" class="com.bean.DdupCourseEntity" lazy="false" insert="false" update="false">
-            <column name="ddup_Cno"/>
+            <column name="ddup_Cno" not-null="true"/>
         </many-to-one>
     </class>
 </hibernate-mapping>

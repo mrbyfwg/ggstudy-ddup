@@ -2,7 +2,11 @@ package com.dao;
 
 import com.bean.DdupTeachEntity;
 import org.springframework.transaction.annotation.Transactional;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class teachDaoImpl extends BaseHibernateDao implements teachDao{
@@ -31,6 +35,7 @@ public class teachDaoImpl extends BaseHibernateDao implements teachDao{
             throw re;
         }
     }
+
     @Override
     @Transactional
     public void save(DdupTeachEntity t) {

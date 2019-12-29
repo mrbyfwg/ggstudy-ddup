@@ -11,29 +11,11 @@
         <property name="ddupAge" column="ddup_age"/>
         <property name="ddupPhone" column="ddup_phone"/>
         <property name="ddupTitle" column="ddup_title"/>
-        <set name="ddupPptteachercontenthardsByDdupTno" inverse="true" lazy="false">
-            <key>
-                <column name="ddup_tno"/>
-            </key>
-            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontenthardEntity"/>
-        </set>
-        <set name="ddupPptteachercontentimportantsByDdupTno" inverse="true" lazy="false">
-            <key>
-                <column name="ddup_tno"/>
-            </key>
-            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontentimportantEntity"/>
-        </set>
-        <set name="ddupPptteachercontentimportanthardsByDdupTno" inverse="true" lazy="false">
-            <key>
-                <column name="ddup_tno"/>
-            </key>
-            <one-to-many not-found="ignore" class="com.bean.DdupPptteachercontentimportanthardEntity"/>
-        </set>
         <set name="ddupTeachesByDdupTno" inverse="true" lazy="false">
             <key>
                 <column name="ddup_Tno"/>
             </key>
-            <one-to-many not-found="ignore" class="com.bean.DdupTeachEntity"/>
+            <one-to-many not-found="ignore" class="com.bean.DdupTeachEntity" />
         </set>
     </class>
 </hibernate-mapping>

@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
     <package name="struts" extends="json-default,struts-default" namespace="/">
-<!--        teacher实体类接口-->
+        <!--        teacher实体类接口-->
         <action name="findAllteacher" class="com.action.teacherAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -31,7 +31,38 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        student实体类接口-->
+        <!--        student实体类接口-->
+        <action name="sign" class="com.action.studentAction" method="sign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateSign" class="com.action.studentAction" method="updateSign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getSign" class="com.action.studentAction" method="getSign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="rankingCreate" class="com.action.studentAction" method="rankingCreate">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="rankingFind" class="com.action.studentAction" method="rankingFind">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addToStudyTime" class="com.action.studentAction" method="addToStudyTime">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
         <action name="findAllstudent" class="com.action.studentAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -57,7 +88,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--homework实体类接口-->
+        <!--homework实体类接口-->
         <action name="findAllhomework" class="com.action.HomeworkAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -83,7 +114,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        Class实体类接口-->
+        <!--        Class实体类接口-->
         <action name="findAllClass" class="com.action.classAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -109,7 +140,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        Course实体类接口-->
+        <!--        Course实体类接口-->
         <action name="findAllCourse" class="com.action.courseAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -135,7 +166,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        TeachBuilding实体类的接口-->
+        <!--        TeachBuilding实体类的接口-->
         <action name="findAllTeachBuilding" class="com.action.teachBuildingAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -161,7 +192,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        major实体类的接口-->
+        <!--        major实体类的接口-->
         <action name="findAllMajor" class="com.action.majorAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -187,7 +218,7 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        TeacherPasswordManage实体类的接口-->
+        <!--        TeacherPasswordManage实体类的接口-->
         <action name="findAllTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -213,7 +244,12 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        StudentPasswordManage实体类的接口-->
+        <action name="teacherLogin" class="com.action.teacherPasswordManageAction" method="login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        StudentPasswordManage实体类的接口-->
         <action name="findAllStudentPasswordManage" class="com.action.studentPasswordManageAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -239,7 +275,12 @@
                 <param name="root">result</param>
             </result>
         </action>
-<!--        Teach实体类的接口-->
+        <action name="studentLogin" class="com.action.studentPasswordManageAction" method="login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        Teach实体类的接口-->
         <action name="findAllTeach" class="com.action.teachAction" method="findAllUser">
             <result type="json">
                 <param name="root">result</param>
@@ -261,6 +302,697 @@
             </result>
         </action>
         <action name="deleteByIdTeach" class="com.action.teachAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <!--        teacher信息视图接口-->
+        <action name="findAllteacherInf" class="com.action.teacherInfAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdteacherInf" class="com.action.teacherInfAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <!--        ppt信息视图接口
+        <action name="findAllpptInf" class="com.action.pptInfAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdpptInf" class="com.action.pptInfAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>-->
+
+
+
+        <!-- pptContent实体类的接口-->
+        <action name="updateLable" class="com.action.pptContentAction" method="updateLable">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateQuestion" class="com.action.pptContentAction" method="updateQuestion">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findLable" class="com.action.pptContentAction" method="findLable">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="CourseInformation" class="com.action.pptContentAction" method="CourseInformation">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="findCoursepPpt" class="com.action.pptContentAction" method="findCoursepPpt">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+
+
+
+        <action name="findAllPptContent" class="com.action.pptContentAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptContent" class="com.action.pptContentAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptContent" class="com.action.pptContentAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptContent" class="com.action.pptContentAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptContent" class="com.action.pptContentAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptManage实体类的接口-->
+        <action name="findAllPpt" class="com.action.pptManageAction" method="findAllPpt">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+
+
+
+
+        <action name="findAllPptManage" class="com.action.pptManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        teacher实体类接口-->
+        <action name="findAllteacher" class="com.action.teacherAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdteacher" class="com.action.teacherAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateteacher" class="com.action.teacherAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addteacher" class="com.action.teacherAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdteacher" class="com.action.teacherAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        student实体类接口-->
+        <action name="sign" class="com.action.studentAction" method="sign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateSign" class="com.action.studentAction" method="updateSign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getSign" class="com.action.studentAction" method="getSign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="rankingCreate" class="com.action.studentAction" method="rankingCreate">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="rankingFind" class="com.action.studentAction" method="rankingFind">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addToStudyTime" class="com.action.studentAction" method="addToStudyTime">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findAllstudent" class="com.action.studentAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdstudent" class="com.action.studentAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatestudent" class="com.action.studentAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addstudent" class="com.action.studentAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdstudent" class="com.action.studentAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--homework实体类接口-->
+        <action name="findAllhomework" class="com.action.HomeworkAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdhomework" class="com.action.HomeworkAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatehomework" class="com.action.HomeworkAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addhomework" class="com.action.HomeworkAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdclass" class="com.action.HomeworkAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        Class实体类接口-->
+        <action name="findAllClass" class="com.action.classAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdClass" class="com.action.classAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateClass" class="com.action.classAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addClass" class="com.action.classAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdClass" class="com.action.classAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        Course实体类接口-->
+        <action name="findAllCourse" class="com.action.courseAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdCourse" class="com.action.courseAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateCourse" class="com.action.courseAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addCourse" class="com.action.courseAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdCourse" class="com.action.courseAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        TeachBuilding实体类的接口-->
+        <action name="findAllTeachBuilding" class="com.action.teachBuildingAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeachBuilding" class="com.action.teachBuildingAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeachBuilding" class="com.action.teachBuildingAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeachBuilding" class="com.action.teachBuildingAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeachBuilding" class="com.action.teachBuildingAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        major实体类的接口-->
+        <action name="findAllMajor" class="com.action.majorAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdMajor" class="com.action.majorAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateMajor" class="com.action.majorAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addMajor" class="com.action.majorAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdMajor" class="com.action.majorAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        TeacherPasswordManage实体类的接口-->
+        <action name="findAllTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeacherPasswordManage" class="com.action.teacherPasswordManageAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="teacherLogin" class="com.action.teacherPasswordManageAction" method="login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        StudentPasswordManage实体类的接口-->
+        <action name="findAllStudentPasswordManage" class="com.action.studentPasswordManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdStudentPasswordManage" class="com.action.studentPasswordManageAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateStudentPasswordManage" class="com.action.studentPasswordManageAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addStudentPasswordManage" class="com.action.studentPasswordManageAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdStudentPasswordManage" class="com.action.studentPasswordManageAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="studentLogin" class="com.action.studentPasswordManageAction" method="login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        Teach实体类的接口-->
+        <action name="findAllTeach" class="com.action.teachAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdTeach" class="com.action.teachAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateTeach" class="com.action.teachAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addTeach" class="com.action.teachAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdTeach" class="com.action.teachAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <!--        teacher信息视图接口-->
+        <action name="findAllteacherInf" class="com.action.teacherInfAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdteacherInf" class="com.action.teacherInfAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <!--        ppt信息视图接口
+        <action name="findAllpptInf" class="com.action.pptInfAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdpptInf" class="com.action.pptInfAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>-->
+
+
+
+        <!-- pptContent实体类的接口-->
+        <action name="updateLable" class="com.action.pptContentAction" method="updateLable">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updateQuestion" class="com.action.pptContentAction" method="updateQuestion">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findLable" class="com.action.pptContentAction" method="findLable">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="CourseInformation" class="com.action.pptContentAction" method="CourseInformation">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+
+
+
+
+        <action name="findAllPptContent" class="com.action.pptContentAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptContent" class="com.action.pptContentAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptContent" class="com.action.pptContentAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptContent" class="com.action.pptContentAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptContent" class="com.action.pptContentAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptManage实体类的接口-->
+        <action name="findAllPpt" class="com.action.pptManageAction" method="findAllPpt">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+
+
+
+
+        <action name="findAllPptManage" class="com.action.pptManageAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptManage" class="com.action.pptManageAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptManage" class="com.action.pptManageAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptManage" class="com.action.pptManageAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptManage" class="com.action.pptManageAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptStudentContent实体类的接口-->
+        <action name="findBySnoPptStudentContent" class="com.action.pptStudentContentAction" method="findBySno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findAllPptStudentContent" class="com.action.pptStudentContentAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptStudentContent" class="com.action.pptStudentContentAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptStudentContent" class="com.action.pptStudentContentAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptStudentContent" class="com.action.pptStudentContentAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptStudentContent" class="com.action.pptStudentContentAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptTeacherContentHard实体类的接口-->
+        <action name="findByTnoPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="findByTno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findAllPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByHqlPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="findByHql">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptTeacherContentHard" class="com.action.pptTeacherContentHardAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptTeacherContentImportant实体类的接口-->
+        <action name="findByTnoTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="findByTno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findAllPptTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptTeacherContentImportant" class="com.action.pptTeacherContentImportantAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!-- pptTeacherContentImportantHard实体类的接口-->
+        <action name="findByTnoTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="findByTno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findAllPptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByIdPptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="findById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByHqlPptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="findByHql">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="updatePptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="update">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="addPptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="add">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deleteByIdPptTeacherContentImportantHard" class="com.action.pptTeacherContentImportantHardAction" method="deleteById">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        course信息视图接口-->
+        <action name="findAllCourseInf" class="com.action.courseInfAction" method="findAllUser">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="teacherCourseChoose" class="com.action.courseInfAction" method="findByTno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="findByClassnoCourseInf" class="com.action.courseInfAction" method="findByClassno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="studentCourseChoose" class="com.action.courseInfAction" method="findBySno">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="openSign" class="com.action.courseAction" method="openSign">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--        文件上传-->
+
+        <action name="upload" class="com.action.uploadAction" method="upload">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+
+
+
+        <action name="findCoursepPpt" class="com.action.pptContentAction" method="findCoursepPpt">
             <result type="json">
                 <param name="root">result</param>
             </result>

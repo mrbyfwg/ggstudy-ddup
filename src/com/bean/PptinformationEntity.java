@@ -96,23 +96,43 @@ public class PptinformationEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         PptinformationEntity that = (PptinformationEntity) o;
 
-        if (ddupPptPageNum != that.ddupPptPageNum) return false;
-        if (ddupPptNno != null ? !ddupPptNno.equals(that.ddupPptNno) : that.ddupPptNno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
+        if (ddupPptPageNum != that.ddupPptPageNum) {
+            return false;
+        }
+        if (ddupPptNno != null ? !ddupPptNno.equals(that.ddupPptNno) : that.ddupPptNno != null) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
         if (ddupPptDownloadNum != null ? !ddupPptDownloadNum.equals(that.ddupPptDownloadNum) : that.ddupPptDownloadNum != null)
+        {
             return false;
+        }
         if (ddupPptImportant != null ? !ddupPptImportant.equals(that.ddupPptImportant) : that.ddupPptImportant != null)
+        {
             return false;
-        if (ddupPptHard != null ? !ddupPptHard.equals(that.ddupPptHard) : that.ddupPptHard != null) return false;
+        }
+        if (ddupPptHard != null ? !ddupPptHard.equals(that.ddupPptHard) : that.ddupPptHard != null) {
+            return false;
+        }
         if (ddupPptImportantHard != null ? !ddupPptImportantHard.equals(that.ddupPptImportantHard) : that.ddupPptImportantHard != null)
+        {
             return false;
+        }
         if (ddupPptQuestionNum != null ? !ddupPptQuestionNum.equals(that.ddupPptQuestionNum) : that.ddupPptQuestionNum != null)
+        {
             return false;
+        }
 
         return true;
     }

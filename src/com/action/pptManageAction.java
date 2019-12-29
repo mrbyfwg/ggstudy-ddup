@@ -4,10 +4,14 @@ import com.bean.DdupPptmanageEntity;
 import com.service.pptManageService;
 import net.sf.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @author Dwt0610
+ * @Date 2019/12/14
+ */
 public class pptManageAction extends baseActionConfig7 {
     private DdupPptmanageEntity pptManage;
     private pptManageService pptManageService;
@@ -63,6 +67,43 @@ public class pptManageAction extends baseActionConfig7 {
     public void setDownloadNum(int downloadNum) {
         DownloadNum = downloadNum;
     }
+
+    public String findAllPpt(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        String status = null;
+        try {
+            List alllist = pptManageService.findAll();
+            List<String> idlist = new ArrayList<>();
+            List<String> namelist = new ArrayList<>();
+            if (alllist.size() != 0) {
+                for(int i=0; i<alllist.size(); i++){
+                    pptManage = (DdupPptmanageEntity)alllist.get(i);
+                    String PPTNAME = pptManage.getDdupName();
+                    String[] strarray=PPTNAME.split("\\+");
+                    if(strarray[1].equals(id)){
+                        idlist.add(pptManage.getDdupPptNo());
+                        namelist.add(strarray[0]);
+                    }
+                }
+                map.put("idlist", idlist);
+                map.put("namelist", namelist);
+                status = "1";
+            } else {
+                status = "0";
+            }
+            map.put("status", status);
+            return ajax(map);
+        } catch (Exception e) {
+            status="0";
+            map.put("status", status);
+            e.printStackTrace();
+            return ajax(map);
+        }
+    }
+
+
+
+
 
     public String findAllUser() {
         Map<String, Object> map = new HashMap<String, Object>();

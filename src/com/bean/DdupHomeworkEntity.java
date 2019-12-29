@@ -23,7 +23,7 @@ public class DdupHomeworkEntity {
         this.ddupHomeworkNum = ddupHomeworkNum;
     }
 
-    @Id
+    @Basic
     @Column(name = "ddup_Cno")
     public String getDdupCno() {
         return ddupCno;
@@ -75,21 +75,37 @@ public class DdupHomeworkEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         DdupHomeworkEntity that = (DdupHomeworkEntity) o;
 
         if (ddupHomeworkNum != null ? !ddupHomeworkNum.equals(that.ddupHomeworkNum) : that.ddupHomeworkNum != null)
+        {
             return false;
-        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) return false;
+        }
+        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) {
+            return false;
+        }
         if (ddupHomeworkName != null ? !ddupHomeworkName.equals(that.ddupHomeworkName) : that.ddupHomeworkName != null)
+        {
             return false;
+        }
         if (ddupStartTime != null ? !ddupStartTime.equals(that.ddupStartTime) : that.ddupStartTime != null)
+        {
             return false;
-        if (ddupEndTime != null ? !ddupEndTime.equals(that.ddupEndTime) : that.ddupEndTime != null) return false;
+        }
+        if (ddupEndTime != null ? !ddupEndTime.equals(that.ddupEndTime) : that.ddupEndTime != null) {
+            return false;
+        }
         if (ddupSubmitNum != null ? !ddupSubmitNum.equals(that.ddupSubmitNum) : that.ddupSubmitNum != null)
+        {
             return false;
+        }
 
         return true;
     }
@@ -106,7 +122,7 @@ public class DdupHomeworkEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ddup_Cno", referencedColumnName = "ddup_Cno", nullable = false)
+    @JoinColumn(name = "ddup_Cno", referencedColumnName = "ddup_Cno")
     public DdupCourseEntity getDdupCourseByDdupCno() {
         return ddupCourseByDdupCno;
     }

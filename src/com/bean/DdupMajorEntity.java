@@ -32,13 +32,21 @@ public class DdupMajorEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         DdupMajorEntity that = (DdupMajorEntity) o;
 
-        if (ddupId != that.ddupId) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
+        if (ddupId != that.ddupId) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
 
         return true;
     }

@@ -12,9 +12,6 @@ public class DdupTeacherEntity {
     private Integer ddupAge;
     private String ddupPhone;
     private String ddupTitle;
-    private Collection<DdupPptteachercontenthardEntity> ddupPptteachercontenthardsByDdupTno;
-    private Collection<DdupPptteachercontentimportantEntity> ddupPptteachercontentimportantsByDdupTno;
-    private Collection<DdupPptteachercontentimportanthardEntity> ddupPptteachercontentimportanthardsByDdupTno;
     private Collection<DdupTeachEntity> ddupTeachesByDdupTno;
 
     @Id
@@ -79,17 +76,33 @@ public class DdupTeacherEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         DdupTeacherEntity that = (DdupTeacherEntity) o;
 
-        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
-        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) return false;
-        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null) return false;
-        if (ddupPhone != null ? !ddupPhone.equals(that.ddupPhone) : that.ddupPhone != null) return false;
-        if (ddupTitle != null ? !ddupTitle.equals(that.ddupTitle) : that.ddupTitle != null) return false;
+        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
+        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) {
+            return false;
+        }
+        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null){
+            return false;
+        }
+        if (ddupPhone != null ? !ddupPhone.equals(that.ddupPhone) : that.ddupPhone != null) {
+            return false;
+        }
+        if (ddupTitle != null ? !ddupTitle.equals(that.ddupTitle) : that.ddupTitle != null) {
+            return false;
+        }
 
         return true;
     }
@@ -103,33 +116,6 @@ public class DdupTeacherEntity {
         result = 31 * result + (ddupPhone != null ? ddupPhone.hashCode() : 0);
         result = 31 * result + (ddupTitle != null ? ddupTitle.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "ddupTeacherByDdupTno")
-    public Collection<DdupPptteachercontenthardEntity> getDdupPptteachercontenthardsByDdupTno() {
-        return ddupPptteachercontenthardsByDdupTno;
-    }
-
-    public void setDdupPptteachercontenthardsByDdupTno(Collection<DdupPptteachercontenthardEntity> ddupPptteachercontenthardsByDdupTno) {
-        this.ddupPptteachercontenthardsByDdupTno = ddupPptteachercontenthardsByDdupTno;
-    }
-
-    @OneToMany(mappedBy = "ddupTeacherByDdupTno")
-    public Collection<DdupPptteachercontentimportantEntity> getDdupPptteachercontentimportantsByDdupTno() {
-        return ddupPptteachercontentimportantsByDdupTno;
-    }
-
-    public void setDdupPptteachercontentimportantsByDdupTno(Collection<DdupPptteachercontentimportantEntity> ddupPptteachercontentimportantsByDdupTno) {
-        this.ddupPptteachercontentimportantsByDdupTno = ddupPptteachercontentimportantsByDdupTno;
-    }
-
-    @OneToMany(mappedBy = "ddupTeacherByDdupTno")
-    public Collection<DdupPptteachercontentimportanthardEntity> getDdupPptteachercontentimportanthardsByDdupTno() {
-        return ddupPptteachercontentimportanthardsByDdupTno;
-    }
-
-    public void setDdupPptteachercontentimportanthardsByDdupTno(Collection<DdupPptteachercontentimportanthardEntity> ddupPptteachercontentimportanthardsByDdupTno) {
-        this.ddupPptteachercontentimportanthardsByDdupTno = ddupPptteachercontentimportanthardsByDdupTno;
     }
 
     @OneToMany(mappedBy = "ddupTeacherByDdupTno")

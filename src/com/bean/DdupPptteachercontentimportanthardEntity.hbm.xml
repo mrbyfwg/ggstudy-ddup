@@ -6,16 +6,8 @@
 
     <class name="com.bean.DdupPptteachercontentimportanthardEntity" table="ddup_pptteachercontentimportanthard"
            schema="ddupmis">
-        <composite-id mapped="true" class="com.bean.DdupPptteachercontentimportanthardEntityPK">
-            <key-property name="ddupTno" column="ddup_tno"/>
-            <key-property name="ddupPptNo" column="ddup_pptNo"/>
-            <key-property name="ddupPptPageNum" column="ddup_pptPageNum"/>
-        </composite-id>
-        <many-to-one name="ddupTeacherByDdupTno" class="com.bean.DdupTeacherEntity">
-            <column name="ddup_tno"/>
-        </many-to-one>
-        <many-to-one name="ddupPptmanageByDdupPptNo" class="com.bean.DdupPptmanageEntity">
-            <column name="ddup_pptNo"/>
-        </many-to-one>
+        <id name="ddupTno" column="ddup_tno"/>
+        <property name="ddupPptNo" column="ddup_pptNo"/>
+        <property name="ddupPptPageNum" column="ddup_pptPageNum"/>
     </class>
 </hibernate-mapping>

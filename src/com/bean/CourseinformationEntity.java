@@ -129,28 +129,54 @@ public class CourseinformationEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         CourseinformationEntity that = (CourseinformationEntity) o;
 
         if (ddupCourseName != null ? !ddupCourseName.equals(that.ddupCourseName) : that.ddupCourseName != null)
+        {
             return false;
-        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) return false;
+        }
+        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) {
+            return false;
+        }
         if (ddupTeacherName != null ? !ddupTeacherName.equals(that.ddupTeacherName) : that.ddupTeacherName != null)
+        {
             return false;
-        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) return false;
-        if (ddupClassno != null ? !ddupClassno.equals(that.ddupClassno) : that.ddupClassno != null) return false;
-        if (ddupPeriod != null ? !ddupPeriod.equals(that.ddupPeriod) : that.ddupPeriod != null) return false;
+        }
+        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null){
+            return false;
+        }
+        if (ddupClassno != null ? !ddupClassno.equals(that.ddupClassno) : that.ddupClassno != null) {
+            return false;
+        }
+        if (ddupPeriod != null ? !ddupPeriod.equals(that.ddupPeriod) : that.ddupPeriod != null) {
+            return false;
+        }
         if (ddupLearnTime != null ? !ddupLearnTime.equals(that.ddupLearnTime) : that.ddupLearnTime != null)
+        {
             return false;
+        }
         if (ddupTestMethod != null ? !ddupTestMethod.equals(that.ddupTestMethod) : that.ddupTestMethod != null)
+        {
             return false;
-        if (ddupCredit != null ? !ddupCredit.equals(that.ddupCredit) : that.ddupCredit != null) return false;
+        }
+        if (ddupCredit != null ? !ddupCredit.equals(that.ddupCredit) : that.ddupCredit != null){
+            return false;
+        }
         if (ddupTeachRoomId != null ? !ddupTeachRoomId.equals(that.ddupTeachRoomId) : that.ddupTeachRoomId != null)
+        {
             return false;
+        }
         if (ddupTeachBuildingName != null ? !ddupTeachBuildingName.equals(that.ddupTeachBuildingName) : that.ddupTeachBuildingName != null)
+        {
             return false;
+        }
 
         return true;
     }

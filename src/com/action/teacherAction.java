@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class teacherAction extends baseAction{
+public class teacherAction extends baseActionConfig10{
     private DdupTeacherEntity teacher;
     private teacherService teacherService;
     private String result;
@@ -118,8 +118,8 @@ public class teacherAction extends baseAction{
             List list=teacherService.findById(id);
             if(list.size()!=0){
                 teacher=(DdupTeacherEntity) list.get(0);
-               map.put("teacher",teacher);
-               status="1";
+                map.put("teacher",teacher);
+                status="1";
             }
             else{
                 status="0";
@@ -161,42 +161,42 @@ public class teacherAction extends baseAction{
         }
     }
     public String update(){
-            Map<String, Object> map = new HashMap<String, Object>();
-            String status = null;
-            try{
-                teacher=new DdupTeacherEntity();
-                teacher.setDdupAge(age);
-                System.out.println(age);
-                teacher.setDdupName(name);
-                teacher.setDdupPhone(phone);
-                teacher.setDdupSex(sex);
-                teacher.setDdupTitle(title);
-                teacher.setDdupTno(id);
-                if(teacherService.updateInfo(teacher)){
-                    status="1";
-                }else{
-                    status="0";
-                }
-                map.put("status", status);
-                return ajax(map);
-            }catch (Exception e) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        String status = null;
+        try{
+            teacher=new DdupTeacherEntity();
+            teacher.setDdupAge(age);
+            System.out.println(age);
+            teacher.setDdupName(name);
+            teacher.setDdupPhone(phone);
+            teacher.setDdupSex(sex);
+            teacher.setDdupTitle(title);
+            teacher.setDdupTno(id);
+            if(teacherService.updateInfo(teacher)){
+                status="1";
+            }else{
                 status="0";
-                map.put("status", status);
-                e.printStackTrace();
-                return ajax(map);
             }
+            map.put("status", status);
+            return ajax(map);
+        }catch (Exception e) {
+            status="0";
+            map.put("status", status);
+            e.printStackTrace();
+            return ajax(map);
         }
+    }
     public String deleteById(){
         Map<String, Object> map = new HashMap<String, Object>();
         String status = null;
 
         try{
 
-           if(teacherService.deleteById(id)){
-               status="1";
-           }else{
-               status="0";
-           }
+            if(teacherService.deleteById(id)){
+                status="1";
+            }else{
+                status="0";
+            }
             map.put("status", status);
             return ajax(map);
         }catch (Exception e) {

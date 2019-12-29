@@ -77,19 +77,35 @@ public class DdupCourseEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         DdupCourseEntity that = (DdupCourseEntity) o;
 
-        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
-        if (ddupPeriod != null ? !ddupPeriod.equals(that.ddupPeriod) : that.ddupPeriod != null) return false;
+        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
+        if (ddupPeriod != null ? !ddupPeriod.equals(that.ddupPeriod) : that.ddupPeriod != null) {
+            return false;
+        }
         if (ddupLearnTime != null ? !ddupLearnTime.equals(that.ddupLearnTime) : that.ddupLearnTime != null)
+        {
             return false;
+        }
         if (ddupTestMethod != null ? !ddupTestMethod.equals(that.ddupTestMethod) : that.ddupTestMethod != null)
+        {
             return false;
-        if (ddupCredit != null ? !ddupCredit.equals(that.ddupCredit) : that.ddupCredit != null) return false;
+        }
+        if (ddupCredit != null ? !ddupCredit.equals(that.ddupCredit) : that.ddupCredit != null) {
+            return false;
+        }
 
         return true;
     }

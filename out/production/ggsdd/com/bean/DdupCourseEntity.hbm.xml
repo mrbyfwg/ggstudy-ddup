@@ -13,7 +13,7 @@
         <property name="ddupCredit" column="ddup_credit"/>
         <set name="ddupHomeworksByDdupCno" inverse="true">
             <key>
-                <column name="ddup_Cno"/>
+                <column name="ddup_Cno" not-null="true"/>
             </key>
             <one-to-many not-found="ignore" class="com.bean.DdupHomeworkEntity"/>
         </set>

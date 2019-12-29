@@ -14,7 +14,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/ddupmis?characterEncoding=utf-8"/>
         <property name="username" value="root"/>
-        <property name="password" value="ywp19990816"/>
+        <property name="password" value="root"/>
     </bean>
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -44,6 +44,10 @@
                 <value>com/bean/DdupTeachEntity.hbm.xml</value>
                 <value>com/bean/DdupTeachbuildingEntity.hbm.xml</value>
                 <value>com/bean/DdupTeacherpasswordmanageEntity.hbm.xml</value>
+                <value>com/bean/CourseinformationEntity.hbm.xml</value>
+                <value>com/bean/PptinformationEntity.hbm.xml</value>
+                <value>com/bean/StudentinformationEntity.hbm.xml</value>
+                <value>com/bean/TeacherinformationEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -96,5 +100,54 @@
     <bean id="studentPasswordManageDao" class="com.dao.studentPasswordManageDaoImpl" parent="BaseHibernateDao"></bean>
     <bean id="studentPasswordManageService" class="com.service.studentPasswordManageServiceImpl">
         <property name="studentPasswordManageDao" ref="studentPasswordManageDao"/>
+    </bean>
+    <!--视图配置-->
+    <bean id="teacherInfDao" class="com.dao.teacherInfDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="teacherInfService" class="com.service.teacherInfServiceImpl">
+        <property name="teacherInfDao" ref="teacherInfDao"/>
+    </bean>
+
+
+    <!--<bean id="studentInfDao" class="com.dao.studentInfDaoImpl" parent="BaseHibernateDao"></bean>
+   <bean id="studentInfService" class="com.service.studentInfServiceImpl">
+       <property name="studentInfDao" ref="studentInfDao"/>
+   </bean>
+   <bean id="pptInfDao" class="com.dao.pptInfDaoImpl" parent="BaseHibernateDao"></bean>
+   <bean id="pptInfService" class="com.service.pptInfServiceImpl">
+       <property name="pptInfDao" ref="pptInfDao"/>
+   </bean>-->
+
+
+
+
+   <!-- -->
+    <bean id="pptContentDao" class="com.dao.pptContentDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptContentService" class="com.service.pptContentServiceImpl">
+        <property name="pptContentDao" ref="pptContentDao"/>
+    </bean>
+    <bean id="pptManageDao" class="com.dao.pptManageDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptManageService" class="com.service.pptManageServiceImpl">
+        <property name="pptManageDao" ref="pptManageDao"/>
+    </bean>
+    <bean id="pptStudentContentDao" class="com.dao.pptStudentContentDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptStudentContentService" class="com.service.pptStudentContentServiceImpl">
+        <property name="pptStudentContentDao" ref="pptStudentContentDao"/>
+    </bean>
+    <bean id="pptTeacherContentHardDao" class="com.dao.pptTeacherContentHardDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptTeacherContentHardService" class="com.service.pptTeacherContentHardServiceImpl">
+        <property name="pptTeacherContentHardDao" ref="pptTeacherContentHardDao"/>
+    </bean>
+    <bean id="pptTeacherContentImportantDao" class="com.dao.pptTeacherContentImportantDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptTeacherContentImportantService" class="com.service.pptTeacherContentImportantServiceImpl">
+        <property name="pptTeacherContentImportantDao" ref="pptTeacherContentImportantDao"/>
+    </bean>
+    <bean id="pptTeacherContentImportantHardDao" class="com.dao.pptTeacherContentImportantHardDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="pptTeacherContentImportantHardService" class="com.service.pptTeacherContentImportantHardServiceImpl">
+        <property name="pptTeacherContentImportantHardDao" ref="pptTeacherContentImportantHardDao"/>
+    </bean>
+
+    <bean id="courseInfDao" class="com.dao.courseInfDaoImpl" parent="BaseHibernateDao"></bean>
+    <bean id="courseInfService" class="com.service.courseInfServiceImpl">
+        <property name="courseInfDao" ref="courseInfDao"/>
     </bean>
 </beans>

@@ -159,9 +159,65 @@ public class studentPasswordManageAction extends baseAction{
         }
 
     }
+    //学生登录验证
+    public String login(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        String status = null;
+        try{
+            List list=studentPasswordManageService.findById(id);
+            if(list.size()!=0){
+                student=(DdupStudentpasswordmanageEntity) list.get(0);
+                if(student.getDdupPassword().equals(password)){
+                    status="1";
+                    System.out.println("登录成功");
+                }else {
+                    status = "0";
+                }
+                //map.put("studentPasswordManage",student);
+                // status="1";
+            }else {
+                status = "0";
+            }
+            map.put("status", status);
+            return ajax(map);
+            //System.out.println("登录失败");
+            // return false;
+        }catch (Exception e) {
+            status="0";
+            map.put("status", status);
+            e.printStackTrace();
+            return ajax(map);
+        }
+
+    }
+
+
 }
 
 
+/*
+    public boolean login(){
+        //Map<String, Object> map = new HashMap<String, Object>();
+        //String status = null;
+        try{
+            List list=studentPasswordManageService.findById(id);
+            if(list.size()!=0){
+                student=(DdupStudentpasswordmanageEntity) list.get(0);
+                if(student.getDdupPassword().equals(password)){
+                    System.out.println("登录成功");
+                }
+                //map.put("studentPasswordManage",student);
+               // status="1";
+            }
+            System.out.println("登录失败");
+            return false;
+        }catch (Exception e) {
+            System.out.println("登录出错");
+            e.printStackTrace();
+            return false;
+        }
+
+    }*/
 
 
 /*

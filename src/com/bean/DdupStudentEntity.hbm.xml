@@ -14,11 +14,5 @@
         <many-to-one name="ddupClassByDdupClass" class="com.bean.DdupClassEntity" insert="false" update="false" lazy="false">
             <column name="ddup_class"/>
         </many-to-one>
-        <set name="ddupPptstudentcontentsByDdupSno" inverse="true" lazy="false">
-            <key>
-                <column name="ddup_sno"/>
-            </key>
-            <one-to-many not-found="ignore" class="com.bean.DdupPptstudentcontentEntity"/>
-        </set>
     </class>
 </hibernate-mapping>

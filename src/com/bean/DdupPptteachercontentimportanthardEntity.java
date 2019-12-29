@@ -4,16 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ddup_pptteachercontentimportanthard", schema = "ddupmis", catalog = "")
-@IdClass(DdupPptteachercontentimportanthardEntityPK.class)
 public class DdupPptteachercontentimportanthardEntity {
     private String ddupTno;
     private String ddupPptNo;
-    private Integer ddupPptPageNum;
-    private DdupTeacherEntity ddupTeacherByDdupTno;
-    private DdupPptmanageEntity ddupPptmanageByDdupPptNo;
+    private int ddupPptPageNum;
 
     @Id
-    @Basic
     @Column(name = "ddup_tno")
     public String getDdupTno() {
         return ddupTno;
@@ -23,7 +19,6 @@ public class DdupPptteachercontentimportanthardEntity {
         this.ddupTno = ddupTno;
     }
 
-    @Id
     @Basic
     @Column(name = "ddup_pptNo")
     public String getDdupPptNo() {
@@ -34,10 +29,9 @@ public class DdupPptteachercontentimportanthardEntity {
         this.ddupPptNo = ddupPptNo;
     }
 
-    @Id
     @Basic
     @Column(name = "ddup_pptPageNum")
-    public Integer getDdupPptPageNum() {
+    public int getDdupPptPageNum() {
         return ddupPptPageNum;
     }
 
@@ -45,21 +39,26 @@ public class DdupPptteachercontentimportanthardEntity {
         this.ddupPptPageNum = ddupPptPageNum;
     }
 
-    public void setDdupPptPageNum(Integer ddupPptPageNum) {
-        this.ddupPptPageNum = ddupPptPageNum;
-    }
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         DdupPptteachercontentimportanthardEntity that = (DdupPptteachercontentimportanthardEntity) o;
 
-        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) return false;
-        if (ddupPptNo != null ? !ddupPptNo.equals(that.ddupPptNo) : that.ddupPptNo != null) return false;
-        if (ddupPptPageNum != null ? !ddupPptPageNum.equals(that.ddupPptPageNum) : that.ddupPptPageNum != null)
+        if (ddupPptPageNum != that.ddupPptPageNum){
             return false;
+        }
+        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null){
+            return false;
+        }
+        if (ddupPptNo != null ? !ddupPptNo.equals(that.ddupPptNo) : that.ddupPptNo != null) {
+            return false;
+        }
 
         return true;
     }
@@ -68,27 +67,7 @@ public class DdupPptteachercontentimportanthardEntity {
     public int hashCode() {
         int result = ddupTno != null ? ddupTno.hashCode() : 0;
         result = 31 * result + (ddupPptNo != null ? ddupPptNo.hashCode() : 0);
-        result = 31 * result + (ddupPptPageNum != null ? ddupPptPageNum.hashCode() : 0);
+        result = 31 * result + ddupPptPageNum;
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumns({@JoinColumn(name = "ddup_tno", referencedColumnName = "ddup_Tno"), @JoinColumn(name = "ddup_tno", referencedColumnName = "ddup_Tno", nullable = false)})
-    public DdupTeacherEntity getDdupTeacherByDdupTno() {
-        return ddupTeacherByDdupTno;
-    }
-
-    public void setDdupTeacherByDdupTno(DdupTeacherEntity ddupTeacherByDdupTno) {
-        this.ddupTeacherByDdupTno = ddupTeacherByDdupTno;
-    }
-
-    @ManyToOne
-    @JoinColumns({@JoinColumn(name = "ddup_pptNo", referencedColumnName = "ddup_pptNo"), @JoinColumn(name = "ddup_pptNo", referencedColumnName = "ddup_pptNo", nullable = false)})
-    public DdupPptmanageEntity getDdupPptmanageByDdupPptNo() {
-        return ddupPptmanageByDdupPptNo;
-    }
-
-    public void setDdupPptmanageByDdupPptNo(DdupPptmanageEntity ddupPptmanageByDdupPptNo) {
-        this.ddupPptmanageByDdupPptNo = ddupPptmanageByDdupPptNo;
     }
 }

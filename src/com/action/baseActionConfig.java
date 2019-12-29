@@ -6,6 +6,10 @@ import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
 import org.apache.struts2.ServletActionContext;
 
+/**
+ * @author Dwt0610
+ * @Date 2019/12/14
+ */
 public class baseActionConfig{
 
     public String ajax(Object out){

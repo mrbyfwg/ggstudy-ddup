@@ -75,20 +75,36 @@ public class DdupPptcontentEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         DdupPptcontentEntity that = (DdupPptcontentEntity) o;
 
-        if (ddupPptPageNum != that.ddupPptPageNum) return false;
-        if (ddupPptNo != null ? !ddupPptNo.equals(that.ddupPptNo) : that.ddupPptNo != null) return false;
+        if (ddupPptPageNum != that.ddupPptPageNum) {
+            return false;
+        }
+        if (ddupPptNo != null ? !ddupPptNo.equals(that.ddupPptNo) : that.ddupPptNo != null) {
+            return false;
+        }
         if (ddupPptImportant != null ? !ddupPptImportant.equals(that.ddupPptImportant) : that.ddupPptImportant != null)
+        {
             return false;
-        if (ddupPptHard != null ? !ddupPptHard.equals(that.ddupPptHard) : that.ddupPptHard != null) return false;
+        }
+        if (ddupPptHard != null ? !ddupPptHard.equals(that.ddupPptHard) : that.ddupPptHard != null) {
+            return false;
+        }
         if (ddupPptImportantHard != null ? !ddupPptImportantHard.equals(that.ddupPptImportantHard) : that.ddupPptImportantHard != null)
+        {
             return false;
+        }
         if (ddupPptQuestionNum != null ? !ddupPptQuestionNum.equals(that.ddupPptQuestionNum) : that.ddupPptQuestionNum != null)
+        {
             return false;
+        }
 
         return true;
     }

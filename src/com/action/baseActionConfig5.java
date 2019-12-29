@@ -7,7 +7,10 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
-
+/**
+ * @author Dwt0610
+ * @Date 2019/12/14
+ */
 public class baseActionConfig5 {
 
     public String ajax(Object out){

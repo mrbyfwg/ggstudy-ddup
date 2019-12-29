@@ -85,18 +85,36 @@ public class TeacherinformationEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         TeacherinformationEntity that = (TeacherinformationEntity) o;
 
-        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
-        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) return false;
-        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null) return false;
-        if (ddupPhone != null ? !ddupPhone.equals(that.ddupPhone) : that.ddupPhone != null) return false;
-        if (ddupTitle != null ? !ddupTitle.equals(that.ddupTitle) : that.ddupTitle != null) return false;
-        if (ddupPassword != null ? !ddupPassword.equals(that.ddupPassword) : that.ddupPassword != null) return false;
+        if (ddupTno != null ? !ddupTno.equals(that.ddupTno) : that.ddupTno != null) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
+        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null){
+            return false;
+        }
+        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null){
+            return false;
+        }
+        if (ddupPhone != null ? !ddupPhone.equals(that.ddupPhone) : that.ddupPhone != null) {
+            return false;
+        }
+        if (ddupTitle != null ? !ddupTitle.equals(that.ddupTitle) : that.ddupTitle != null) {
+            return false;
+        }
+        if (ddupPassword != null ? !ddupPassword.equals(that.ddupPassword) : that.ddupPassword != null){
+            return false;
+        }
 
         return true;
     }

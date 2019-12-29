@@ -9,7 +9,7 @@
         <property name="ddupName" column="ddup_name"/>
         <property name="ddupMajor" column="ddup_major"/>
         <many-to-one name="ddupMajorByDdupMajor" class="com.bean.DdupMajorEntity" insert="false" update="false">
-            <column name="ddup_major" />
+            <column name="ddup_major"/>
         </many-to-one>
         <set name="ddupStudentsByDdupCno" inverse="true">
             <key>

@@ -159,4 +159,34 @@ public class teacherPasswordManageAction extends baseAction{
         }
 
     }
+
+    /**教师登录验证*/
+    public String login(){
+        Map<String, Object> map = new HashMap<String, Object>();
+        String status = null;
+        try{
+            List list=teacherPasswordManageService.findById(id);
+            if(list.size()!=0){
+                teacher=(DdupTeacherpasswordmanageEntity) list.get(0);
+                if(teacher.getDdupPassword().equals(password)){
+                    status="1";
+                    System.out.println("登录成功");
+                }else {
+                    status = "0";
+                }
+
+            }else {
+                status = "0";
+            }
+            map.put("status", status);
+            return ajax(map);
+
+        }catch (Exception e) {
+            status="0";
+            map.put("status", status);
+            e.printStackTrace();
+            return ajax(map);
+        }
+
+    }
 }

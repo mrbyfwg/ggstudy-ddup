@@ -40,8 +40,8 @@ public class classServiceImpl implements classService{
             if (t.getDdupName() != null && !t.getDdupName().equals("")){
                 DDclass.setDdupName(t.getDdupName());
             }
-            if (t.getDdupName() != null && t.getDdupName().equals("")){//-----------------------------------------------
-                DDclass.setDdupName(t.getDdupName());
+            if (t.getDdupCno() != null && t.getDdupCno().equals("")){//-----------------------------------------------
+                DDclass.setDdupCno(t.getDdupCno());
             }
             if (t.getDdupMajor() !=0 ){
                 DDclass.setDdupMajor(t.getDdupMajor());

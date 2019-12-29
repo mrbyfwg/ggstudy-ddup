@@ -20,7 +20,14 @@ public class studentServiceImpl implements studentService{
     @Override
     @Transactional
     public List findAll(){
-        String hql="from DdupStudentEntity ";
+        String hql="from DdupStudentEntity";
+        List list=studentDao.findByHql(hql);
+        return list;
+    }
+    @Override
+    @Transactional
+    public List findAllOrder(){
+        String hql="from DdupStudentEntity order by ddup_age DESC";
         List list=studentDao.findByHql(hql);
         return list;
     }
@@ -52,6 +59,27 @@ public class studentServiceImpl implements studentService{
             if (t.getDdupOriginPlace() != null && !t.getDdupOriginPlace().equals("")){
                 student.setDdupOriginPlace(t.getDdupOriginPlace());
             }
+            try{
+                studentDao.update(student);
+                System.out.println("更新成功");
+                return true;
+            }catch(Exception e){
+                System.out.println("更新失败");
+                return false;
+            }
+
+        }
+    }
+    @Override
+    @Transactional
+    public Boolean updateInfo2(String sno,int learntime){
+        {
+
+            DdupStudentEntity student = studentDao.findById(sno);
+            if (learntime!=0){
+                student.setDdupAge(student.getDdupAge()+learntime);
+            }
+
             try{
                 studentDao.update(student);
                 System.out.println("更新成功");
@@ -104,4 +132,9 @@ public class studentServiceImpl implements studentService{
             }
         }
     }
+
+    public com.dao.studentDao getStudentDao() {
+        return studentDao;
+    }
+
 }

@@ -30,13 +30,21 @@ public class DdupStudentpasswordmanageEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         DdupStudentpasswordmanageEntity that = (DdupStudentpasswordmanageEntity) o;
 
-        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null) return false;
-        if (ddupPassword != null ? !ddupPassword.equals(that.ddupPassword) : that.ddupPassword != null) return false;
+        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null) {
+            return false;
+        }
+        if (ddupPassword != null ? !ddupPassword.equals(that.ddupPassword) : that.ddupPassword != null){
+            return false;
+        }
 
         return true;
     }

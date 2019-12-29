@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "ddup_class", schema = "ddupmis")
+@Table(name = "ddup_class", schema = "ddupmis", catalog = "")
 public class DdupClassEntity {
     private String ddupCno;
     private String ddupName;
@@ -34,7 +34,7 @@ public class DdupClassEntity {
     }
 
     @Basic
-    @Column(name = "ddup_major" )
+    @Column(name = "ddup_major")
     public int getDdupMajor() {
         return ddupMajor;
     }
@@ -45,14 +45,24 @@ public class DdupClassEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         DdupClassEntity that = (DdupClassEntity) o;
 
-        if (ddupMajor != that.ddupMajor) return false;
-        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
+        if (ddupMajor != that.ddupMajor) {
+            return false;
+        }
+        if (ddupCno != null ? !ddupCno.equals(that.ddupCno) : that.ddupCno != null) {
+            return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
 
         return true;
     }
@@ -66,7 +76,7 @@ public class DdupClassEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ddup_major", referencedColumnName = "ddup_id")
+    @JoinColumn(name = "ddup_major", referencedColumnName = "ddup_id", nullable = false)
     public DdupMajorEntity getDdupMajorByDdupMajor() {
         return ddupMajorByDdupMajor;
     }

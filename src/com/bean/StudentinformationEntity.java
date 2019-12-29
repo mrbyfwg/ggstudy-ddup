@@ -85,19 +85,37 @@ public class StudentinformationEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
 
         StudentinformationEntity that = (StudentinformationEntity) o;
 
-        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
-        if (ddupMajor != null ? !ddupMajor.equals(that.ddupMajor) : that.ddupMajor != null) return false;
-        if (ddupClass != null ? !ddupClass.equals(that.ddupClass) : that.ddupClass != null) return false;
-        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) return false;
-        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null) return false;
-        if (ddupOriginPlace != null ? !ddupOriginPlace.equals(that.ddupOriginPlace) : that.ddupOriginPlace != null)
+        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null){
             return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null){
+            return false;
+        }
+        if (ddupMajor != null ? !ddupMajor.equals(that.ddupMajor) : that.ddupMajor != null){
+            return false;
+        }
+        if (ddupClass != null ? !ddupClass.equals(that.ddupClass) : that.ddupClass != null){
+            return false;
+        }
+        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null){
+            return false;
+        }
+        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null){
+            return false;
+        }
+        if (ddupOriginPlace != null ? !ddupOriginPlace.equals(that.ddupOriginPlace) : that.ddupOriginPlace != null)
+        {
+            return false;
+        }
 
         return true;
     }

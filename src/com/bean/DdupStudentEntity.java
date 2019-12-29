@@ -1,7 +1,6 @@
 package com.bean;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "ddup_student", schema = "ddupmis", catalog = "")
@@ -12,7 +11,6 @@ public class DdupStudentEntity {
     private String ddupSex;
     private Integer ddupAge;
     private String ddupOriginPlace;
-    private Collection<DdupPptstudentcontentEntity> ddupPptstudentcontentsByDdupSno;
     private DdupClassEntity ddupClassByDdupClass;
 
     @Id
@@ -82,13 +80,25 @@ public class DdupStudentEntity {
 
         DdupStudentEntity that = (DdupStudentEntity) o;
 
-        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null) return false;
-        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) return false;
-        if (ddupClass != null ? !ddupClass.equals(that.ddupClass) : that.ddupClass != null) return false;
-        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) return false;
-        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null) return false;
-        if (ddupOriginPlace != null ? !ddupOriginPlace.equals(that.ddupOriginPlace) : that.ddupOriginPlace != null)
+        if (ddupSno != null ? !ddupSno.equals(that.ddupSno) : that.ddupSno != null) {
             return false;
+        }
+        if (ddupName != null ? !ddupName.equals(that.ddupName) : that.ddupName != null) {
+            return false;
+        }
+        if (ddupClass != null ? !ddupClass.equals(that.ddupClass) : that.ddupClass != null){
+            return false;
+        }
+        if (ddupSex != null ? !ddupSex.equals(that.ddupSex) : that.ddupSex != null) {
+            return false;
+        }
+        if (ddupAge != null ? !ddupAge.equals(that.ddupAge) : that.ddupAge != null) {
+            return false;
+        }
+        if (ddupOriginPlace != null ? !ddupOriginPlace.equals(that.ddupOriginPlace) : that.ddupOriginPlace != null)
+        {
+            return false;
+        }
 
         return true;
     }
@@ -102,15 +112,6 @@ public class DdupStudentEntity {
         result = 31 * result + (ddupAge != null ? ddupAge.hashCode() : 0);
         result = 31 * result + (ddupOriginPlace != null ? ddupOriginPlace.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "ddupStudentByDdupSno")
-    public Collection<DdupPptstudentcontentEntity> getDdupPptstudentcontentsByDdupSno() {
-        return ddupPptstudentcontentsByDdupSno;
-    }
-
-    public void setDdupPptstudentcontentsByDdupSno(Collection<DdupPptstudentcontentEntity> ddupPptstudentcontentsByDdupSno) {
-        this.ddupPptstudentcontentsByDdupSno = ddupPptstudentcontentsByDdupSno;
     }
 
     @ManyToOne
